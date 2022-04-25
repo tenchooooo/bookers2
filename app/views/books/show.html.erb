@@ -1,6 +1,11 @@
-<%= @books.each do |book| %>
-<div>
-  <%= books.title %>
-  <%= books.opinion %>
-</div>
-<% end %>
+<h1>Book detail</h1>
+<table>
+  <tr>
+    <td>Title</td>
+    <td>Opinion</td>
+  </tr>
+  <tr>
+    <td><%= link_to  @book.title  book_path(book) %></td>
+    <td><%= @book.opinion %></td>
+  </tr>
+</table>
