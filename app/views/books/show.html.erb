@@ -5,7 +5,7 @@
     <td>Opinion</td>
   </tr>
   <tr>
-    <td><%= link_to  @book.title  book_path(book) %></td>
-    <td><%= @book.opinion %></td>
+    <td><%= link_to @book.title, book_path(@book) %></td>
+    <td><%= @book.body %></td>
   </tr>
 </table>
