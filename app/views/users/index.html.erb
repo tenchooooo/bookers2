@@ -1,0 +1,15 @@
+<h1>Users</h1>
+<table>
+  <tr>
+    <td>image</td>
+    <td>name</td>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+      <td><%= image_tag user.get_user_icon(100,100) %></td>
+      <td><%= user.name %></td>
+      <td><%= link_to "show",user_path(user.id) %></td>
+   </tr>
+   <% end %>
+ 
+</table>

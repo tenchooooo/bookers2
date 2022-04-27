@@ -3,8 +3,13 @@
 <div>
   <%= image_tag @user.get_user_icon(100, 100) %><br>
   name <%= @user.name %><br>
-  introduction <%= @user.user_introduction %>
+  introduction <%= @user.user_introduction %><br>
+  
+  <%= link_to "edit", edit_user_path(@user.id) %>
 </div>
+
+<!--新規投稿-->
+
 <!--user投稿一覧-->
 <h1>Books</h1>
 <table>
