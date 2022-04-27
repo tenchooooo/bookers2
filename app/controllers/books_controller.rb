@@ -20,6 +20,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-いいにおいらしい)
+    parmit.require(:book).parmit(:title, :body)
   end
 end
