@@ -10,16 +10,18 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
+    @user = User.find(current_user.id)
 
   end
 
   def show
     @book = Book.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
 
   private
   def book_params
-    parmit.require(:book).parmit(:title, :body)
+    params.require(:book).permit(:title, :body)
   end
 end

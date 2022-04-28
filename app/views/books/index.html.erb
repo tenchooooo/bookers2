@@ -1,4 +1,24 @@
+
+<h1>User inpo</h1>
+<!--user紹介-->
+<div>
+  <%= image_tag @user.get_user_icon(100, 100) %><br>
+  name <%= @user.name %><br>
+  introduction <%= @user.user_introduction %><br>
+  
+  <%= link_to "edit", edit_user_path(@user.id) %>
+</div>
+<!--新規投稿-->
 <h1>New book</h1>
+<%= form_with model: @book, url:books_path, method: :post do |f| %>
+  <h4>title</h4>
+  <%= f.text_field :title %>
+
+  <h4>opinion</h4>
+  <%= f.text_area :body %>
+  <br>
+  <%= f.submit 'Create Book' %>
+<% end %><h1>New book</h1>
 <%= form_with model: @book, url:books_path, method: :post do |f| %>
   <h4>title</h4>
   <%= f.text_field :title %>
