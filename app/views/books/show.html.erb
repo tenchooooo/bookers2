@@ -21,11 +21,15 @@
 <!--詳細-->
 <h1>Book detail</h1>
 <table>
-
   <tr>
     <td><%= image_tag @user.get_user_icon(100, 100) %></td>
     <td><%= link_to @book.title, book_path(@book) %></td>
     <td><%= @book.body %></td>
+    <% if @book.user == current_user %>
+      <td><%= link_to "Edit", edit_book_path(@book) %></td>
+      <td><%= link_to "Destroy", book_path(@book.id), method: :delete ,"data-confirm" => "本当に消しますか？"%></td>
+    <% end %>
   </tr>
+  
     <td><%= link_to @user.name, user_path(current_user.id) %></td>
 </table>
