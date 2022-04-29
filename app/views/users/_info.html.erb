@@ -1,0 +1,12 @@
+<h1>User inpo</h1>
+<!--user紹介-->
+<div>
+  <%= image_tag user.get_user_icon(100, 100) %><br>
+  name <%= user.name %><br>
+  introduction <%= user.user_introduction %><br>
+  <% if user == current_user %>
+  <%= link_to "edit", edit_user_path(user.id) %>
+  <% else %>
+  <%= link_to "edit", user_path(current_user.id) %>
+  <% end %>
+</div>
