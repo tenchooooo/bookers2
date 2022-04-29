@@ -5,8 +5,8 @@
   name <%= user.name %><br>
   introduction <%= user.user_introduction %><br>
   <% if user == current_user %>
-  <%= link_to "edit", edit_user_path(user.id) %>
+    <%= link_to "edit", edit_user_path(user.id) %>
   <% else %>
-  <%= link_to "edit", user_path(current_user.id) %>
+    <%= link_to "edit", user_path(current_user.id) %>
   <% end %>
 </div>
