@@ -1,12 +1,31 @@
-<h1>User inpo</h1>
+
 <!--user紹介-->
-<div>
+  <h2>User inpo</h2>
   <%= image_tag user.get_user_icon(100, 100) %><br>
-  name <%= user.name %><br>
-  introduction <%= user.user_introduction %><br>
-  <% if user == current_user %>
-    <%= link_to "edit", edit_user_path(user.id) %>
-  <% else %>
-    <%= link_to "edit", user_path(current_user.id) %>
-  <% end %>
-</div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>name</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= user.user_introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <% if user == current_user %>
+      <%= link_to (edit_user_path(user.id))  do %>
+      <button class='btn btn-outline-secondary btn-block edit_user_path'>
+        edit
+      </button>
+      <% end %>
+    <% else %>
+    <%= link_to (user_path(current_user.id)) do %>
+      <button class='btn btn-outline-secondary btn-block edit_user_path'>
+        edit
+      </button>
+      <% end %>
+    <% end %>
+  </div>
