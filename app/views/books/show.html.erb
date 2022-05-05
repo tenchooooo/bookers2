@@ -12,9 +12,10 @@
       <table class="table">
         <tr>
           <td>
-            <a href="/user/:id">
+            <%= link_to user_path(current_user.id) do %>
               <%= image_tag @user.get_user_icon(100, 100) %><br>
-              <%= link_to @user.name, user_path(current_user.id) %>
+              <%= @user.name %>
+            <% end %>
             </a>
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
@@ -23,7 +24,6 @@
           <td><%= link_to "Edit", edit_book_path(@book), class:"btn btn-sm btn-success" %></td>
           <td><%= link_to "Destroy", book_path(@book.id), method: :delete ,"data-confirm" => "本当に消しますか？",  class:"btn btn-sm btn-danger" %></td>
           <% end %>
-
         </tr>
       </table>
     </div>

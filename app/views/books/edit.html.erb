@@ -9,7 +9,9 @@
       <%= f.text_area :body, autofocus:true, id:"inputBody", class:"form-control book_body" %> <br>
       <%= f.submit "Update Book", class:"btn btn-success"%>
       <% end %>
-      <a href="book.id">Show</a>
+      <%=link_to book_path(@book.id) do %>
+      Show
+      <% end %>
       |
       <a href="/books">Back</a>
     </div>
