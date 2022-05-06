@@ -1,7 +1,7 @@
 
 <!--user紹介-->
   <h2>User info</h2>
-  <%= image_tag user.get_user_icon(100, 100) %><br>
+  <%= image_tag user.get_profile_image(100, 100) %><br>
   <table class="table">
     <tbody>
       <tr>
@@ -16,16 +16,16 @@
   </table>
   <div class="row">
     <% if user == current_user %>
-      <%= link_to (edit_user_path(user.id))  do %>
-      <a class='btn btn-outline-secondary btn-block edit_user_path'>
+      <%= link_to (edit_user_path(user.id)), class:'btn btn-outline-secondary btn-block'  do %>
+      <div>
         <i class="fa-solid fa-user-gear"></i>
-      </a>
+      </div>
       <% end %>
     <% else %>
-    <%= link_to (user_path(current_user.id)) do %>
-      <a class='btn btn-outline-secondary btn-block edit_user_path'>
+    <%= link_to (user_path(current_user.id)), class:'btn btn-outline-secondary btn-block' do %>
+      <div>
         <i class="fa-solid fa-user-gear"></i>
-      </a>
+      </div>
       <% end %>
     <% end %>
   </div>
