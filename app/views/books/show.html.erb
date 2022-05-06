@@ -12,9 +12,10 @@
       <table class="table">
         <tr>
           <td>
-            <a href="/user/#{user.id}">
+            <%=link_to user_path(@user.id) do %>
               <%= image_tag @user.get_user_icon(100, 100) %><br>
-              <%= link_to @user.name, user_path(current_user.id) %>
+              <%= link_to @user.name, user_path(@user.id) %>
+            <% end %>
             </a>
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
