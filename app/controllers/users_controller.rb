@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to user_path(current_user)
+    end
   end
 
   def update
@@ -30,10 +33,11 @@ class UsersController < ApplicationController
     @book.user_id = current_user.id
     @book.save
     redirect_to books_path(@book.id)
+    flash[:notice] ="You have created book successfully."
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :profile_image, :user_introduction)
+    params.require(:user).permit(:name, :profile_image, :introduction)
   end
 end
